@@ -75,6 +75,7 @@
             txtPrizeAmountValue.Name = "txtPrizeAmountValue";
             txtPrizeAmountValue.Size = new Size(430, 35);
             txtPrizeAmountValue.TabIndex = 26;
+            txtPrizeAmountValue.Text = "0";
             // 
             // lblPrizeAmountLabel
             // 
@@ -105,16 +106,17 @@
             // 
             // txtPrizePercentageValue
             // 
-            txtPrizePercentageValue.Location = new Point(202, 392);
+            txtPrizePercentageValue.Location = new Point(192, 392);
             txtPrizePercentageValue.Name = "txtPrizePercentageValue";
-            txtPrizePercentageValue.Size = new Size(407, 35);
+            txtPrizePercentageValue.Size = new Size(417, 35);
             txtPrizePercentageValue.TabIndex = 30;
+            txtPrizePercentageValue.Text = "0";
             // 
             // lblPrizePercentageLabel
             // 
             lblPrizePercentageLabel.AutoSize = true;
             lblPrizePercentageLabel.ForeColor = Color.Blue;
-            lblPrizePercentageLabel.Location = new Point(29, 392);
+            lblPrizePercentageLabel.Location = new Point(29, 395);
             lblPrizePercentageLabel.Name = "lblPrizePercentageLabel";
             lblPrizePercentageLabel.Size = new Size(167, 30);
             lblPrizePercentageLabel.TabIndex = 29;
@@ -145,6 +147,7 @@
             btnCreatePrizeButton.TabIndex = 32;
             btnCreatePrizeButton.Text = "Create Prize";
             btnCreatePrizeButton.UseVisualStyleBackColor = true;
+            btnCreatePrizeButton.Click += btnCreatePrizeButton_Click;
             // 
             // CreatePrizeForm
             // 
