@@ -35,15 +35,15 @@
             SelectTeamMemberDropDown = new ComboBox();
             lblSelectTeamMemberLabel = new Label();
             addNewMemberGroupBox = new GroupBox();
-            txtFirstNameValue = new TextBox();
-            lblFirstNameLabel = new Label();
-            txtLastNameValue = new TextBox();
-            lblLastNameLabel = new Label();
-            txtEmailValue = new TextBox();
-            lblEmailLabel = new Label();
+            btnCreateMemberButton = new Button();
             txtCellPhoneValue = new TextBox();
             lblCellphoneLabel = new Label();
-            btnCreateMemberButton = new Button();
+            txtEmailValue = new TextBox();
+            lblEmailLabel = new Label();
+            txtLastNameValue = new TextBox();
+            lblLastNameLabel = new Label();
+            txtFirstNameValue = new TextBox();
+            lblFirstNameLabel = new Label();
             TeamMembersListBox = new ListBox();
             btnDeleteSelectedMemberButton = new Button();
             btnCreateTeamButton = new Button();
@@ -130,56 +130,21 @@
             addNewMemberGroupBox.TabStop = false;
             addNewMemberGroupBox.Text = "Add New Member";
             // 
-            // txtFirstNameValue
+            // btnCreateMemberButton
             // 
-            txtFirstNameValue.Location = new Point(136, 52);
-            txtFirstNameValue.Name = "txtFirstNameValue";
-            txtFirstNameValue.Size = new Size(430, 35);
-            txtFirstNameValue.TabIndex = 22;
-            // 
-            // lblFirstNameLabel
-            // 
-            lblFirstNameLabel.AutoSize = true;
-            lblFirstNameLabel.ForeColor = Color.Blue;
-            lblFirstNameLabel.Location = new Point(17, 52);
-            lblFirstNameLabel.Name = "lblFirstNameLabel";
-            lblFirstNameLabel.Size = new Size(113, 30);
-            lblFirstNameLabel.TabIndex = 21;
-            lblFirstNameLabel.Text = "First Name";
-            // 
-            // txtLastNameValue
-            // 
-            txtLastNameValue.Location = new Point(136, 109);
-            txtLastNameValue.Name = "txtLastNameValue";
-            txtLastNameValue.Size = new Size(430, 35);
-            txtLastNameValue.TabIndex = 24;
-            // 
-            // lblLastNameLabel
-            // 
-            lblLastNameLabel.AutoSize = true;
-            lblLastNameLabel.ForeColor = Color.Blue;
-            lblLastNameLabel.Location = new Point(17, 109);
-            lblLastNameLabel.Name = "lblLastNameLabel";
-            lblLastNameLabel.Size = new Size(112, 30);
-            lblLastNameLabel.TabIndex = 23;
-            lblLastNameLabel.Text = "Last Name";
-            // 
-            // txtEmailValue
-            // 
-            txtEmailValue.Location = new Point(136, 160);
-            txtEmailValue.Name = "txtEmailValue";
-            txtEmailValue.Size = new Size(430, 35);
-            txtEmailValue.TabIndex = 26;
-            // 
-            // lblEmailLabel
-            // 
-            lblEmailLabel.AutoSize = true;
-            lblEmailLabel.ForeColor = Color.Blue;
-            lblEmailLabel.Location = new Point(17, 160);
-            lblEmailLabel.Name = "lblEmailLabel";
-            lblEmailLabel.Size = new Size(63, 30);
-            lblEmailLabel.TabIndex = 25;
-            lblEmailLabel.Text = "Email";
+            btnCreateMemberButton.FlatAppearance.BorderColor = Color.Silver;
+            btnCreateMemberButton.FlatAppearance.MouseDownBackColor = Color.Gray;
+            btnCreateMemberButton.FlatAppearance.MouseOverBackColor = Color.White;
+            btnCreateMemberButton.FlatStyle = FlatStyle.Flat;
+            btnCreateMemberButton.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCreateMemberButton.ForeColor = Color.Blue;
+            btnCreateMemberButton.Location = new Point(136, 285);
+            btnCreateMemberButton.Name = "btnCreateMemberButton";
+            btnCreateMemberButton.Size = new Size(325, 58);
+            btnCreateMemberButton.TabIndex = 29;
+            btnCreateMemberButton.Text = "Create Member";
+            btnCreateMemberButton.UseVisualStyleBackColor = true;
+            btnCreateMemberButton.Click += btnCreateMemberButton_Click;
             // 
             // txtCellPhoneValue
             // 
@@ -198,20 +163,56 @@
             lblCellphoneLabel.TabIndex = 27;
             lblCellphoneLabel.Text = "Cellphone";
             // 
-            // btnCreateMemberButton
+            // txtEmailValue
             // 
-            btnCreateMemberButton.FlatAppearance.BorderColor = Color.Silver;
-            btnCreateMemberButton.FlatAppearance.MouseDownBackColor = Color.Gray;
-            btnCreateMemberButton.FlatAppearance.MouseOverBackColor = Color.White;
-            btnCreateMemberButton.FlatStyle = FlatStyle.Flat;
-            btnCreateMemberButton.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCreateMemberButton.ForeColor = Color.Blue;
-            btnCreateMemberButton.Location = new Point(136, 285);
-            btnCreateMemberButton.Name = "btnCreateMemberButton";
-            btnCreateMemberButton.Size = new Size(325, 58);
-            btnCreateMemberButton.TabIndex = 29;
-            btnCreateMemberButton.Text = "Create Member";
-            btnCreateMemberButton.UseVisualStyleBackColor = true;
+            txtEmailValue.Location = new Point(136, 160);
+            txtEmailValue.Name = "txtEmailValue";
+            txtEmailValue.Size = new Size(430, 35);
+            txtEmailValue.TabIndex = 26;
+            // 
+            // lblEmailLabel
+            // 
+            lblEmailLabel.AutoSize = true;
+            lblEmailLabel.ForeColor = Color.Blue;
+            lblEmailLabel.Location = new Point(17, 160);
+            lblEmailLabel.Name = "lblEmailLabel";
+            lblEmailLabel.Size = new Size(63, 30);
+            lblEmailLabel.TabIndex = 25;
+            lblEmailLabel.Text = "Email";
+            // 
+            // txtLastNameValue
+            // 
+            txtLastNameValue.Location = new Point(136, 109);
+            txtLastNameValue.Name = "txtLastNameValue";
+            txtLastNameValue.Size = new Size(430, 35);
+            txtLastNameValue.TabIndex = 24;
+            // 
+            // lblLastNameLabel
+            // 
+            lblLastNameLabel.AutoSize = true;
+            lblLastNameLabel.ForeColor = Color.Blue;
+            lblLastNameLabel.Location = new Point(17, 109);
+            lblLastNameLabel.Name = "lblLastNameLabel";
+            lblLastNameLabel.Size = new Size(112, 30);
+            lblLastNameLabel.TabIndex = 23;
+            lblLastNameLabel.Text = "Last Name";
+            // 
+            // txtFirstNameValue
+            // 
+            txtFirstNameValue.Location = new Point(136, 52);
+            txtFirstNameValue.Name = "txtFirstNameValue";
+            txtFirstNameValue.Size = new Size(430, 35);
+            txtFirstNameValue.TabIndex = 22;
+            // 
+            // lblFirstNameLabel
+            // 
+            lblFirstNameLabel.AutoSize = true;
+            lblFirstNameLabel.ForeColor = Color.Blue;
+            lblFirstNameLabel.Location = new Point(17, 52);
+            lblFirstNameLabel.Name = "lblFirstNameLabel";
+            lblFirstNameLabel.Size = new Size(113, 30);
+            lblFirstNameLabel.TabIndex = 21;
+            lblFirstNameLabel.Text = "First Name";
             // 
             // TeamMembersListBox
             // 

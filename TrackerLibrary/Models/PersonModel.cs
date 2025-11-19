@@ -12,6 +12,11 @@ namespace TrackerLibrary.Models
     public class PersonModel
     {
         /// <summary>
+        /// the unique identifier for the prize.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// The first name of the person.
         /// </summary>
         public string FirstName { get; set; }
@@ -22,7 +27,7 @@ namespace TrackerLibrary.Models
         /// <summary>
         /// The primary email address of the person.
         /// </summary>
-        public string EmailAdress { get; set; }
+        public string EmailAddress { get; set; }
         /// <summary>
         /// The primary cellphone number of the person.
         /// </summary>
