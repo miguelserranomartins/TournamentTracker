@@ -111,13 +111,13 @@ namespace TrackerUI
         private void btnAddMemberButton_Click(object sender, EventArgs e)
         {
             PersonModel p = (PersonModel)SelectTeamMemberDropDown.SelectedItem;
-                if (p != null)
-                {
-                 availableTeamMembers.Remove(p);
-                 selectedTeamMembers.Add(p);
-                 WireUpLists();
-                }
-           
+            if (p != null)
+            {
+                availableTeamMembers.Remove(p);
+                selectedTeamMembers.Add(p);
+                WireUpLists();
+            }
+
 
         }
 
@@ -132,6 +132,19 @@ namespace TrackerUI
 
                 WireUpLists();
             }
+        }
+
+        private void btnCreateTeamButton_Click(object sender, EventArgs e)
+        {
+            TeamModel t = new TeamModel();
+            t.TeamName = txtTeamNameValue.Text;
+            t.TeamMembers = selectedTeamMembers;
+            
+            t = GlobalConfig.Connection.CreateTeam(t);
+            
+            //txtTeamNameValue.Text = "";
+            //selectedTeamMembers.Clear();
+            //WireUpLists();
         }
     }
 }

@@ -256,6 +256,7 @@
             btnCreateTeamButton.TabIndex = 25;
             btnCreateTeamButton.Text = "Create Team";
             btnCreateTeamButton.UseVisualStyleBackColor = true;
+            btnCreateTeamButton.Click += btnCreateTeamButton_Click;
             // 
             // CreateTeamForm
             // 

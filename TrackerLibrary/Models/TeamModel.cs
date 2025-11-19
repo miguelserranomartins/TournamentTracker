@@ -7,16 +7,19 @@ using System.Threading.Tasks;
 namespace TrackerLibrary.Models
 {
     public class TeamModel
-    {
-        /// <summary>
-        /// this is a list containing the members of a team
-        /// </summary>
-        public List<PersonModel> TeamMembers { get; set; } = new List<PersonModel>();
+    { 
+        public int Id { get; set; }
 
         /// <summary>
         /// this tells us the team name
         /// </summary>
         public string TeamName { get; set; }
+        /// <summary>
+        /// this is a list containing the members of a team
+        /// </summary>
+        public List<PersonModel> TeamMembers { get; set; } = new List<PersonModel>();
+
+      
 
 
     }
