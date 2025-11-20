@@ -243,6 +243,7 @@
             btnCreateTournamentButton.TabIndex = 24;
             btnCreateTournamentButton.Text = "Create Tournament";
             btnCreateTournamentButton.UseVisualStyleBackColor = true;
+            btnCreateTournamentButton.Click += btnCreateTournamentButton_Click;
             // 
             // CreateTournamentForm
             // 
