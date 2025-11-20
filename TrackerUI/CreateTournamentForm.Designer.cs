@@ -40,8 +40,8 @@
             btnCreatePrizeButton = new Button();
             tournamentTeamsListBox = new ListBox();
             lblTournamentPlayersLabel = new Label();
-            btnDeleteSelectedPlayersButton = new Button();
-            btnDeleteSelectedPrizeButton = new Button();
+            btnRemoveSelectedPlayersButton = new Button();
+            btnRemoveSelectedPrizeButton = new Button();
             lblPrizesLabel = new Label();
             PrizesListBox = new ListBox();
             btnCreateTournamentButton = new Button();
@@ -177,35 +177,37 @@
             lblTournamentPlayersLabel.TabIndex = 19;
             lblTournamentPlayersLabel.Text = "Teams / Players";
             // 
-            // btnDeleteSelectedPlayersButton
+            // btnRemoveSelectedPlayersButton
             // 
-            btnDeleteSelectedPlayersButton.FlatAppearance.BorderColor = Color.Silver;
-            btnDeleteSelectedPlayersButton.FlatAppearance.MouseDownBackColor = Color.Gray;
-            btnDeleteSelectedPlayersButton.FlatAppearance.MouseOverBackColor = Color.White;
-            btnDeleteSelectedPlayersButton.FlatStyle = FlatStyle.Flat;
-            btnDeleteSelectedPlayersButton.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDeleteSelectedPlayersButton.ForeColor = Color.Blue;
-            btnDeleteSelectedPlayersButton.Location = new Point(841, 242);
-            btnDeleteSelectedPlayersButton.Name = "btnDeleteSelectedPlayersButton";
-            btnDeleteSelectedPlayersButton.Size = new Size(124, 89);
-            btnDeleteSelectedPlayersButton.TabIndex = 20;
-            btnDeleteSelectedPlayersButton.Text = "Delete Selected";
-            btnDeleteSelectedPlayersButton.UseVisualStyleBackColor = true;
+            btnRemoveSelectedPlayersButton.FlatAppearance.BorderColor = Color.Silver;
+            btnRemoveSelectedPlayersButton.FlatAppearance.MouseDownBackColor = Color.Gray;
+            btnRemoveSelectedPlayersButton.FlatAppearance.MouseOverBackColor = Color.White;
+            btnRemoveSelectedPlayersButton.FlatStyle = FlatStyle.Flat;
+            btnRemoveSelectedPlayersButton.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRemoveSelectedPlayersButton.ForeColor = Color.Blue;
+            btnRemoveSelectedPlayersButton.Location = new Point(841, 242);
+            btnRemoveSelectedPlayersButton.Name = "btnRemoveSelectedPlayersButton";
+            btnRemoveSelectedPlayersButton.Size = new Size(124, 89);
+            btnRemoveSelectedPlayersButton.TabIndex = 20;
+            btnRemoveSelectedPlayersButton.Text = "Remove Selected";
+            btnRemoveSelectedPlayersButton.UseVisualStyleBackColor = true;
+            btnRemoveSelectedPlayersButton.Click += btnRemoveSelectedPlayersButton_Click;
             // 
-            // btnDeleteSelectedPrizeButton
+            // btnRemoveSelectedPrizeButton
             // 
-            btnDeleteSelectedPrizeButton.FlatAppearance.BorderColor = Color.Silver;
-            btnDeleteSelectedPrizeButton.FlatAppearance.MouseDownBackColor = Color.Gray;
-            btnDeleteSelectedPrizeButton.FlatAppearance.MouseOverBackColor = Color.White;
-            btnDeleteSelectedPrizeButton.FlatStyle = FlatStyle.Flat;
-            btnDeleteSelectedPrizeButton.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDeleteSelectedPrizeButton.ForeColor = Color.Blue;
-            btnDeleteSelectedPrizeButton.Location = new Point(841, 472);
-            btnDeleteSelectedPrizeButton.Name = "btnDeleteSelectedPrizeButton";
-            btnDeleteSelectedPrizeButton.Size = new Size(124, 89);
-            btnDeleteSelectedPrizeButton.TabIndex = 23;
-            btnDeleteSelectedPrizeButton.Text = "Delete Selected";
-            btnDeleteSelectedPrizeButton.UseVisualStyleBackColor = true;
+            btnRemoveSelectedPrizeButton.FlatAppearance.BorderColor = Color.Silver;
+            btnRemoveSelectedPrizeButton.FlatAppearance.MouseDownBackColor = Color.Gray;
+            btnRemoveSelectedPrizeButton.FlatAppearance.MouseOverBackColor = Color.White;
+            btnRemoveSelectedPrizeButton.FlatStyle = FlatStyle.Flat;
+            btnRemoveSelectedPrizeButton.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRemoveSelectedPrizeButton.ForeColor = Color.Blue;
+            btnRemoveSelectedPrizeButton.Location = new Point(841, 472);
+            btnRemoveSelectedPrizeButton.Name = "btnRemoveSelectedPrizeButton";
+            btnRemoveSelectedPrizeButton.Size = new Size(124, 89);
+            btnRemoveSelectedPrizeButton.TabIndex = 23;
+            btnRemoveSelectedPrizeButton.Text = "Remove Selected";
+            btnRemoveSelectedPrizeButton.UseVisualStyleBackColor = true;
+            btnRemoveSelectedPrizeButton.Click += btnRemoveSelectedPrizeButton_Click;
             // 
             // lblPrizesLabel
             // 
@@ -249,10 +251,10 @@
             BackColor = Color.White;
             ClientSize = new Size(1002, 718);
             Controls.Add(btnCreateTournamentButton);
-            Controls.Add(btnDeleteSelectedPrizeButton);
+            Controls.Add(btnRemoveSelectedPrizeButton);
             Controls.Add(lblPrizesLabel);
             Controls.Add(PrizesListBox);
-            Controls.Add(btnDeleteSelectedPlayersButton);
+            Controls.Add(btnRemoveSelectedPlayersButton);
             Controls.Add(lblTournamentPlayersLabel);
             Controls.Add(tournamentTeamsListBox);
             Controls.Add(btnCreatePrizeButton);
@@ -287,8 +289,8 @@
         private Button btnCreatePrizeButton;
         private ListBox tournamentTeamsListBox;
         private Label lblTournamentPlayersLabel;
-        private Button btnDeleteSelectedPlayersButton;
-        private Button btnDeleteSelectedPrizeButton;
+        private Button btnRemoveSelectedPlayersButton;
+        private Button btnRemoveSelectedPrizeButton;
         private Label lblPrizesLabel;
         private ListBox PrizesListBox;
         private Button btnCreateTournamentButton;
