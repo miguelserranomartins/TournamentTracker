@@ -83,6 +83,7 @@
             RoundDropDown.Name = "RoundDropDown";
             RoundDropDown.Size = new Size(240, 38);
             RoundDropDown.TabIndex = 3;
+            RoundDropDown.SelectedIndexChanged += RoundDropDown_SelectedIndexChanged;
             // 
             // unplayedOnlyCheckBox
             // 
@@ -105,6 +106,7 @@
             matchupListBox.Name = "matchupListBox";
             matchupListBox.Size = new Size(366, 302);
             matchupListBox.TabIndex = 5;
+            matchupListBox.SelectedIndexChanged += matchupListBox_SelectedIndexChanged;
             // 
             // lblTeamOneName
             // 
@@ -184,6 +186,7 @@
             btnScoreButton.TabIndex = 13;
             btnScoreButton.Text = "Score";
             btnScoreButton.UseVisualStyleBackColor = true;
+            btnScoreButton.Click += btnScoreButton_Click;
             // 
             // TounamentViewerForm
             // 
