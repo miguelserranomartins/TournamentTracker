@@ -72,7 +72,7 @@ namespace TrackerLibrary.DataAccess
 
         public TeamModel CreateTeam(TeamModel model)
         {
-            List<TeamModel> teams = TeamsFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
+            List<TeamModel> teams = TeamsFile.FullFilePath().LoadFile().ConvertToTeamModels();
            
             int currentId = 1;
           
@@ -96,7 +96,7 @@ namespace TrackerLibrary.DataAccess
 
         public List<TeamModel> GetTeam_All()
         {
-           return TeamsFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
+           return TeamsFile.FullFilePath().LoadFile().ConvertToTeamModels();
         }
 
         public void CreateTournament(TournamentModel model)
@@ -122,7 +122,7 @@ namespace TrackerLibrary.DataAccess
 
         public List<TournamentModel> GetTournament_All()
         {
-            throw new NotImplementedException();
+            return TournamentsFile.FullFilePath().LoadFile().ConvertToTournamentModels(TeamsFile, PeopleFile, PrizesFile);
         }
 
    

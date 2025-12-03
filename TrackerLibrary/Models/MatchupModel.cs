@@ -11,20 +11,20 @@ namespace TrackerLibrary.Models
     /// </summary>
     public class MatchupModel
     {
-        /// <summary>
-        /// the unique identifier for the match.
-        /// </summary>
         public int Id { get; set; }
         /// <summary>
-        /// the set of teams that were involved in this match.
+        /// O conjunto de equipas que estava envolvido no jogo
         /// </summary>
         public List<MatchupEntryModel> Entries { get; set; } = new List<MatchupEntryModel>();
         /// <summary>
-        /// The winner of the match.
+        /// O vencedor da partida
         /// </summary>
+
+        public int WinnerId { get; set; }
         public TeamModel Winner { get; set; }
+
         /// <summary>
-        /// Which round this match is a part of.
+        /// Que ronda e que esta partida pertence
         /// </summary>
         public int MatchupRound { get; set; }
 

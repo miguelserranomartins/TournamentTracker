@@ -41,6 +41,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             foreach (string line in lines)
             {
                 string[] cols = line.Split(',');
+           
                 PrizeModel p = new PrizeModel();
                 p.Id = int.Parse(cols[0]);
                 p.PlaceNumber = int.Parse(cols[1]);
@@ -59,11 +60,14 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             List<PersonModel> output = new List<PersonModel>();
             foreach (string line in lines)
             {
+              
                 string[] cols = line.Split(',');
                 PersonModel p = new PersonModel();
+                
                 p.Id = int.Parse(cols[0]);
                 p.FirstName = cols[1];
                 p.LastName = cols[2];
+             
                 p.EmailAddress = cols[3]; 
                 p.CellphoneNumber = cols[4];
                 output.Add(p);
@@ -71,28 +75,30 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             return output;
         }
 
-        public static List<TeamModel> ConvertToTeamModels(this List<string> lines, string peopleFileName)
+        public static List<TeamModel> ConvertToTeamModels(this List<string> lines)
         {
-            List<TeamModel> output = new List<TeamModel>();
-            List<PersonModel> people = peopleFileName.FullFilePath().LoadFile().ConvertToPersonModels();
-
+            List<TeamModel> output = new();
+            List<PersonModel> people = GlobalConfig.PeopleFile.FullFilePath().LoadFile().ConvertToPersonModels();
             foreach (string line in lines)
             {
                 string[] cols = line.Split(',');
-                TeamModel t = new TeamModel();
+                TeamModel t = new();
                 t.Id = int.Parse(cols[0]);
                 t.TeamName = cols[1];
+
                 string[] personIds = cols[2].Split('|');
-               
+
                 foreach (string id in personIds)
                 {
                     t.TeamMembers.Add(people.Where(x => x.Id == int.Parse(id)).First());
+
                 }
                 output.Add(t);
+
             }
             return output;
         }
-        
+
 
         public static List<TournamentModel> ConvertToTournamentModels(this List<string> lines,
             string teamFileName, 
@@ -109,7 +115,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             // id,tournamentName,entryFee,(id|id|id - entered teams),(id|id|id - prizes),(Rounds - id^id^id|id^id^id|id^id^id)
 
             List<TournamentModel> output = new List<TournamentModel>();
-            List<TeamModel> teams = teamFileName.FullFilePath().LoadFile().ConvertToTeamModels(teamFileName);
+            List<TeamModel> teams = teamFileName.FullFilePath().LoadFile().ConvertToTeamModels();
             List<PrizeModel> prizes = prizeFileName.FullFilePath().LoadFile().ConvertToPrizeModels();
             List<MatchupModel> matchups = GlobalConfig.MatchupFile.FullFilePath().LoadFile().ConvertToMatchupModels();
 
@@ -283,7 +289,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                 {
                     List<string> matchingTeams = new List<string>();
                     matchingTeams.Add(team);
-                    return matchingTeams.ConvertToTeamModels(GlobalConfig.PeopleFile).First();
+                    return matchingTeams.ConvertToTeamModels().First();
                 }
             }
             return null;
@@ -407,10 +413,7 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                 {
                     teamCompeting = e.TeamCompeting.Id.ToString();
                 }
-                lines.Add($@"{e.Id},
-                    {e.TeamCompeting},
-                    {e.Score},
-                    {parent}");
+                lines.Add($@"{e.Id}, {e.TeamCompeting},{e.Score},{parent}");
             }
 
             File.WriteAllLines(GlobalConfig.MatchupEntryFile.FullFilePath(), lines);
