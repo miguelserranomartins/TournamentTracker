@@ -96,6 +96,7 @@
             unplayedOnlyCheckBox.TabIndex = 4;
             unplayedOnlyCheckBox.Text = "Unplayed Only";
             unplayedOnlyCheckBox.UseVisualStyleBackColor = true;
+            unplayedOnlyCheckBox.CheckedChanged += unplayedOnlyCheckBox_CheckedChanged;
             // 
             // matchupListBox
             // 

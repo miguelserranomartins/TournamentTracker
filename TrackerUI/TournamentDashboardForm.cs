@@ -42,5 +42,16 @@ namespace TrackerUI
             TounamentViewerForm frm = new TounamentViewerForm(tm);
             frm.Show();
         }
+
+        private void AddPrizesToTournament(TournamentModel tm, List<PrizeModel> prizes, List<string> prizeIds)
+        {
+            foreach (string id in prizeIds)
+            {
+                if (!string.IsNullOrWhiteSpace(id))
+                {
+                    tm.Prizes.Add(prizes.Where(x => x.Id == int.Parse(id)).First());
+                }
+            }
+        }
     }
 }

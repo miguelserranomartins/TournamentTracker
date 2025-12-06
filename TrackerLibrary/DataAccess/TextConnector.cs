@@ -65,7 +65,7 @@ namespace TrackerLibrary.DataAccess
             //Convert the prizes to List<string>
             //Save the List<string> to the text file
 
-            prizes.SaveToPrizeFile(PrizesFile);
+            prizes.SaveToPrizeFile();
             
             return model;
         }
@@ -125,6 +125,9 @@ namespace TrackerLibrary.DataAccess
             return TournamentsFile.FullFilePath().LoadFile().ConvertToTournamentModels(TeamsFile, PeopleFile, PrizesFile);
         }
 
-   
+        public void UpdateMatchup(MatchupModel model)
+        {
+            model.UpdateMatchupToFile();
+        }
     }
 }
