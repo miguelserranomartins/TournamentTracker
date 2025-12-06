@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -139,9 +140,10 @@ namespace TrackerUI
 
             GlobalConfig.Connection.CreateTournament(tm);
 
-            //tm.TournamentName = txtTournamentNameValue.Text;
+            TounamentViewerForm frm = new TounamentViewerForm(tm);
+            frm.Show();
 
-            //tm.Rounds = TournementLogic.CreateRounds(tm.EnterdTeams);
+            this.Close();
 
         }
     }
