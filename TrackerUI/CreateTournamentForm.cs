@@ -140,6 +140,8 @@ namespace TrackerUI
 
             GlobalConfig.Connection.CreateTournament(tm);
 
+            tm.AlertUsersToNewRound();
+
             TounamentViewerForm frm = new TounamentViewerForm(tm);
             frm.Show();
 
